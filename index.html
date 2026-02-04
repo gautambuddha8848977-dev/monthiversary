@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6 Monthiversary Gift 💜</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(#f6efff, #fff);
+  color: #5a3b7a;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+button {
+  padding: 15px 35px;
+  font-size: 18px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  margin: 15px;
+}
+
+.yes {
+  background: #c9a7ff;
+  color: #fff;
+}
+
+.no {
+  background: #eee;
+  position: relative;
+}
+
+#giftSection {
+  display: none;
+}
+
+.bouquet {
+  width: 90%;
+  max-width: 420px;
+  margin: 40px auto;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.letter {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-top: 40px;
+}
+
+audio {
+  margin-top: 30px;
+}
+
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 0.8; }
+  100% { transform: translateY(-110vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="startSection">
+  <h1>Happy 6 Monthiversary, My Love 💜</h1>
+  <p>
+    I made something small but full of my heart — just for you.<br>
+    Would you like to open your 6-monthiversary gift?
+  </p>
+
+  <button class="yes" onclick="openGift()">Yesss 💜</button>
+  <button class="no" id="noBtn">No 🙈</button>
+</div>
+
+<div class="container" id="giftSection">
+  <h2>For You, My Wife 💐</h2>
+
+  <img src="rose-bouquet.jpg" alt="Rose Bouquet" class="bouquet">
+
+  <div class="letter">
+    <p>
+      These six months with you have been the most beautiful chapter of my life.
+      Loving you feels gentle, warm, and endlessly safe — like coming home after
+      a long day and knowing I belong.
+    </p>
+
+    <p>
+      Every smile of yours, every little habit, every moment we share reminds me
+      how lucky I am to call you mine. You are my comfort, my excitement, my peace,
+      and my forever favorite person.
+    </p>
+
+    <p>
+      I loveeee youuu sooo muchhh, my wifeeee 💜  
+      And I will keep choosing you — today, tomorrow, and always.
+    </p>
+  </div>
+
+  <audio controls autoplay loop>
+    <source src="elvis.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+function openGift() {
+  document.getElementById("startSection").style.display = "none";
+  document.getElementById("giftSection").style.display = "block";
+}
+
+// NO button dodges
+const noBtn = document.getElementById("noBtn");
+noBtn.addEventListener("mouseover", () => {
+  const x = Math.random() * 200 - 100;
+  const y = Math.random() * 80 - 40;
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+// Floating hearts
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerText = "💜";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 15 + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 500);
+</script>
+
+</body>
+</html>
